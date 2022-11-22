@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "prettier": "2.7.1",
     "web-vitals": "^3.1.0"
   }
 }
