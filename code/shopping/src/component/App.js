@@ -6,6 +6,7 @@ function App() {
         <div>
             <Cart />
             <Product />
+            <div>doudoutest</div>
         </div>
     );
 }
