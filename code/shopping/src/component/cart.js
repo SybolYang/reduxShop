@@ -21,7 +21,7 @@ export default class Cart extends React.Component {
                                     height="100"
                                     alt="02"
                                 />
-                                <span classNameName="cart-item-title">
+                                <span className="cart-item-title">
                                     小户型简约现代网红双人三人客厅科技布免洗布艺
                                 </span>
                             </div>
