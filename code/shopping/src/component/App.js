@@ -4,9 +4,8 @@ import Product from './product';
 function App() {
     return (
         <div>
-            <Cart />
             <Product />
-            <div>doudoutest</div>
+            <Cart />
         </div>
     );
 }

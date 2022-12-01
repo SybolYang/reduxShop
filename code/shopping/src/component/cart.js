@@ -1,9 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default class Cart extends React.Component {
+class Cart extends React.Component {
     render() {
+        const { carts } = this.props;
         return (
             <div>
+                {JSON.stringify(carts)}
                 <section className="container content-section">
                     <h2 className="section-header">购物车</h2>
                     <div className="cart-row">
@@ -62,3 +66,9 @@ export default class Cart extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    carts: state.carts,
+});
+
+export default connect(mapStateToProps)(Cart);
