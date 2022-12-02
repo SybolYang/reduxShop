@@ -37,7 +37,7 @@ class Cart extends React.Component {
                                 <div className="cart-item cart-column">
                                     <img
                                         className="cart-item-image"
-                                        src={thumbnail}
+                                        src={`http://localhost:3005${thumbnail}`}
                                         width="100"
                                         height="100"
                                         alt="02"

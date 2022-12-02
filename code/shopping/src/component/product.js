@@ -20,7 +20,11 @@ class Product extends React.Component {
                     <div className="shop-items">
                         {products.map(({ id, price, thumbnail, title }) => (
                             <div className="shop-item" key={id}>
-                                <img className="shop-item-image" src={thumbnail} alt="01" />
+                                <img
+                                    className="shop-item-image"
+                                    src={`http://localhost:3005${thumbnail}`}
+                                    alt="01"
+                                />
                                 <span className="shop-item-title">{title}</span>
                                 <div className="shop-item-details">
                                     <span className="shop-item-price">￥{price}</span>
