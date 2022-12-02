@@ -67,7 +67,13 @@ class Cart extends React.Component {
                     </div>
                     <div className="cart-total">
                         <strong className="cart-total-title">总价</strong>
-                        <span className="cart-total-price">￥39.97</span>
+                        <span className="cart-total-price">
+                            ￥
+                            {carts.reduce((preTotal, item) => {
+                                const { price, count } = item;
+                                return (preTotal += price * count);
+                            }, 0)}
+                        </span>
                     </div>
                 </section>
             </div>
