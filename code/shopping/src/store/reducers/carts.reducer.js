@@ -1,5 +1,5 @@
 import { handleActions as createReducer } from 'redux-actions';
-import { addProductToLocalCart } from '../actions/carts.actions';
+import { addProductToLocalCart, saveCarts } from '../actions/carts.actions';
 
 //initialState表示传递给reducer的默认值
 const initialState = [];
@@ -14,11 +14,16 @@ const handleAddProductToLocalCartActions = (state, action) => {
     }
     return newState;
 };
+
+const handleSaveCarts = (state, action) => {
+    return action.payload;
+};
 //createReducer把type和默认值给reducer处理
 export default createReducer(
     {
         //将商品列表的值存在当前store中
         [addProductToLocalCart]: handleAddProductToLocalCartActions,
+        [saveCarts]: handleSaveCarts,
     },
     initialState
 );
