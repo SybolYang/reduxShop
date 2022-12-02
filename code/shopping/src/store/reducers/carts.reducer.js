@@ -27,6 +27,7 @@ const handleSaveCarts = (state, action) => {
 const handleDeleteProductFromLocalCart = (state, action) => {
     const newState = JSON.parse(JSON.stringify(state));
     newState.splice(action.payload, 1);
+    return newState;
 };
 
 const handleChangeLocalProductNumber = (state, action) => {

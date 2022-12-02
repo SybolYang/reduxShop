@@ -27,7 +27,6 @@ function* handleDeleteCart(actions) {
             cid: actions.payload,
         },
     });
-    console.log(data);
     yield put(deleteProductFromLocalCart(data.index));
 }
 
