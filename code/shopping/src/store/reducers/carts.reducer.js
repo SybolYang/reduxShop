@@ -3,6 +3,7 @@ import {
     addProductToLocalCart,
     saveCarts,
     deleteProductFromLocalCart,
+    changeLocalProductNumber,
 } from '../actions/carts.actions';
 
 //initialState表示传递给reducer的默认值
@@ -28,6 +29,13 @@ const handleDeleteProductFromLocalCart = (state, action) => {
     newState.splice(action.payload, 1);
 };
 
+const handleChangeLocalProductNumber = (state, action) => {
+    const newState = JSON.parse(JSON.stringify(state));
+    const { id, count } = action.payload;
+    newState.find(product => product.id === id).count = count;
+    return newState;
+};
+
 //createReducer把type和默认值给reducer处理
 export default createReducer(
     {
@@ -35,6 +43,7 @@ export default createReducer(
         [addProductToLocalCart]: handleAddProductToLocalCartActions,
         [saveCarts]: handleSaveCarts,
         [deleteProductFromLocalCart]: handleDeleteProductFromLocalCart,
+        [changeLocalProductNumber]: handleChangeLocalProductNumber,
     },
     initialState
 );

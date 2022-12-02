@@ -14,9 +14,13 @@ class Cart extends React.Component {
         deleteProductFromCart(id);
     };
 
+    changeProductNumber = (cid, count) => {
+        const { changeProductNumber } = this.props;
+        changeProductNumber({ cid, count });
+    };
+
     render() {
         const { carts } = this.props;
-        console.log(carts);
 
         return (
             <div>
@@ -45,7 +49,10 @@ class Cart extends React.Component {
                                     <input
                                         className="cart-quantity-input"
                                         type="number"
-                                        defaultValue={count}
+                                        value={count}
+                                        onChange={e => {
+                                            this.changeProductNumber(id, e.target.value);
+                                        }}
                                     />
                                     <button
                                         className="btn btn-danger"
