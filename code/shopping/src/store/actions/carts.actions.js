@@ -9,3 +9,9 @@ export const addProductToLocalCart = createAction('addProductToLocalCart');
 export const loadCards = createAction('loadCards');
 //将购物车数据同步到本地购物车
 export const saveCarts = createAction('saveCarts');
+
+//告诉服务端删除哪一个商品
+export const deleteProductFromCart = createAction('deleteProductFromCart');
+//删除本地购物车数据
+export const deleteProductFromLocalCart = createAction('deleteProductFromLocalCart');
+

@@ -8,8 +8,16 @@ class Cart extends React.Component {
         const { loadCards } = this.props;
         loadCards();
     }
+
+    deleteCart = id => {
+        const { deleteProductFromCart } = this.props;
+        deleteProductFromCart(id);
+    };
+
     render() {
         const { carts } = this.props;
+        console.log(carts);
+
         return (
             <div>
                 <section className="container content-section">
@@ -20,7 +28,7 @@ class Cart extends React.Component {
                         <span className="cart-quantity cart-header cart-column">数量</span>
                     </div>
                     <div className="cart-items">
-                        {carts.map(({ id, price, thumbnail, title }) => (
+                        {carts.map(({ id, price, thumbnail, title, count }) => (
                             <div className="cart-row" key={id}>
                                 <div className="cart-item cart-column">
                                     <img
@@ -34,8 +42,16 @@ class Cart extends React.Component {
                                 </div>
                                 <span className="cart-price cart-column">￥{price}</span>
                                 <div className="cart-quantity cart-column">
-                                    <input className="cart-quantity-input" type="number" />
-                                    <button className="btn btn-danger" type="button">
+                                    <input
+                                        className="cart-quantity-input"
+                                        type="number"
+                                        defaultValue={count}
+                                    />
+                                    <button
+                                        className="btn btn-danger"
+                                        type="button"
+                                        onClick={() => this.deleteCart(id)}
+                                    >
                                         删除
                                     </button>
                                 </div>
